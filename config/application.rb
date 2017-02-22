@@ -21,5 +21,11 @@ module RailsAjaxDemo
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    config.generators.test_framework = false
+    config.generators.assets = false
+    config.generators.helper = false
+    config.time_zone = 'Taipei'
+    config.active_record.default_timezone = :local
   end
 end
