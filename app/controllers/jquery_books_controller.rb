@@ -1,0 +1,2 @@
+class JqueryBooksController < ApplicationController
+end

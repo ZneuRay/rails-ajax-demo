@@ -1,0 +1,2 @@
+class JqueryBook < Book
+end

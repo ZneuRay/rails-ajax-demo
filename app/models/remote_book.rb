@@ -1,0 +1,2 @@
+class RemoteBook < Book
+end

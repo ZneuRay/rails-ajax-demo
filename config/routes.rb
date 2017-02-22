@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   root 'dashboard#index'
   
+  resources :books
+  resources :jquery_books
+  resources :remote_books
 end

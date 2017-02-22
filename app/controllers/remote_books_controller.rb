@@ -1,0 +1,2 @@
+class RemoteBooksController < ApplicationController
+end
