@@ -1,0 +1,42 @@
+
+<div class="row mt-2">
+  <div class="col-lg-12">
+    <%= link_to new_book_path do %>
+      <button class="btn btn-outline-primary pull-right"><i class="fa fa-plus"></i> New book</button>
+    <% end %>
+  </div>
+</div>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>ISBN</th>
+      <th>Title</th>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Release Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each_with_index do |book, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= book.isbn %></td>
+        <td><%= book.title %></td>
+        <td><%= book.name %></td>
+        <td><%= book.author %></td>
+        <td><%= book.release_date %></td>
+        <td>
+          <%= link_to edit_book_path(book) do %>
+            <button class="btn btn-outline-warning"><i class="fa fa-pencil"></i> Edit</button>
+          <% end %>
+          <%= link_to book_path(book), method: :delete, data: {confirm: 'Are you sure?'} do %>
+            <button class="btn btn-outline-danger"><i class="fa fa-trash"></i> Delete</button>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
