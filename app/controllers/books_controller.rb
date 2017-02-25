@@ -36,12 +36,12 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    # book = Book.find params[:id]
-    # if book.delete
-    #   redirect_to books_path, notice: "「#{book.name}」 have been deleted successfully."
-    # else
-    #   redirect_to :back, alert: "Fail to delete the book. #{book.errors.messages}"
-    # end
+    book = Book.find params[:id]
+    if book.delete
+      redirect_to books_path, notice: "「#{book.name}」 have been deleted successfully."
+    else
+      redirect_to :back, alert: "Fail to delete the book. #{book.errors.messages}"
+    end
   end
 
   private
