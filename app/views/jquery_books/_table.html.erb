@@ -1,0 +1,33 @@
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>ISBN</th>
+      <th>Title</th>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Release Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% books.each_with_index do |book, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= book.isbn %></td>
+        <td><%= book.title %></td>
+        <td><%= book.name %></td>
+        <td><%= book.author %></td>
+        <td><%= book.show_release_date %></td>
+        <td>
+          <button class="btn btn-outline-warning edit-book-btn" data-toggle="modal" data-target="#formModal" data-title="Edit book" data-submit="Update" data-url='<%= edit_jquery_book_path(book) %>'>
+            <i class="fa fa-pencil"></i> Edit
+          </button>
+          <button class="btn btn-outline-danger delete-book-btn" data-url='<%= jquery_book_path(book) %>'>
+            <i class="fa fa-trash"></i> Delete
+          </button>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

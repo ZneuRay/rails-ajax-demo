@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'dashboard#index'
   
   resources :books
-  resources :jquery_books
+  resources :jquery_books do
+    get :load_table, on: :collection
+  end
   resources :remote_books
 end
