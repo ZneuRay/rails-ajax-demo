@@ -23,3 +23,6 @@
 # Ignore configure file
 /config/database.yml
 /config/secrets.yml
+
+# Ignore powenv
+.powenv
