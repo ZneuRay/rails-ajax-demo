@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
   // load table by ajax on ready
   refreshTable()
 
