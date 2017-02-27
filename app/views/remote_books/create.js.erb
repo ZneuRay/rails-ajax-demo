@@ -1,0 +1,7 @@
+<% if @book.errors.messages.size > 0 %>
+  $(".modal-danger-message").html("<%= @book.errors.messages %>")
+  $(".modal-danger-message").show('fast')
+<% else %>
+  $('#formModal').modal('hide')
+  refreshTable()
+<% end %>

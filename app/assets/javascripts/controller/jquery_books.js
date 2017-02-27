@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function () {
   // load table by ajax on ready
   refreshTable()
 
-  // load form by ajax when create/update button is click
+  // load form by ajax when create/edit button is click
   $('#formModal').on('show.bs.modal', function (event) {
     // hide alert message
     $('.modal-danger-message').hide()

@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :jquery_books do
     get :load_table, on: :collection
   end
-  resources :remote_books
+  resources :remote_books do
+    get :load_table, on: :collection
+  end
 end
