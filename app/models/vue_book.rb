@@ -1,0 +1,2 @@
+class VueBook < Book
+end
