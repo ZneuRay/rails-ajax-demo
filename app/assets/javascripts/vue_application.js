@@ -3,3 +3,4 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require vue
+//= require vue-resource

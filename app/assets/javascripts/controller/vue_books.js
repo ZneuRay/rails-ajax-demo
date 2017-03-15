@@ -1,33 +1,36 @@
 var bookTable = new Vue({
   el: '#book-table',
   data: {
-    books: []
+    books: [],
+    book: {
+      isbn: '',
+      title: '',
+      name: '',
+      author: '',
+      release_date: ''
+    }
+    
   },
   mounted: function () {
     var that = this
-    var url = $('#book-table').data('url')
-    $.getJSON(url, function (data) {
-      that.books = data.books
+    var url = '/vue_books'
+    this.$http.get(url).then(response => {
+      that.books = response.body.books
+    }, response => {
+
     })
   },
   methods: {
     onCreateClick: function (event) {
-      console.log(event.target)
-      modal.modalTitle = 'Create book'
+      this.books.unshift(this.book)
     },
-    onEditClick: function () {
-      modal.modalTitle = 'Edit book'
+    onEditClick: function (book) {
+      // book.is_edit = true
+      // console.log(book)
     },
-    createBook: function () {
-      
+    onDeleteClick: function (book) {
+      var index = this.books.indexOf(book)
+      this.books.splice(index, 1)
     }
-  }
-})
-
-var modal = new Vue({
-  el: '#formModal',
-  data: {
-    modalTitle: 'Create book',
-    modalSubmitText: 'Submit'
   }
 })
